@@ -34,6 +34,7 @@ public class MenuScript : MonoBehaviour
         if (rightdoor.position.x >= 2500f )
         {
             clicked = false;
+            Destroy(butt);
         }
 
     }
