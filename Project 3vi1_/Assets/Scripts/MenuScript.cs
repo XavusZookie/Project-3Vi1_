@@ -11,6 +11,8 @@ public class MenuScript : MonoBehaviour
     public bool clicked = false;
     public CanvasGroup fader;
     public GameObject butt;
+    public GameObject panel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,10 +48,13 @@ public class MenuScript : MonoBehaviour
 
     public void clickaway()
     {
+        clicked = false;
         leftdoor.position = new Vector3(-2500f,0,0);
         rightdoor.position = new Vector3(2500f, 0, 0);
         fader.alpha = 0;
         Destroy(butt);
+        Destroy(panel);
+
     }
 
 }
