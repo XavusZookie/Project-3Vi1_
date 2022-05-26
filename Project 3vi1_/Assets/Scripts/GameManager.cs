@@ -8,7 +8,7 @@ public static class GameManager
     public static int boss_shape;
 
 
-    public static int boss_attack_type;
+    public static int boss_attack_type = 1;
     public static int boss_attack_range;
     public static int boss_attack_speed;
     public static int boss_attack_damage;
