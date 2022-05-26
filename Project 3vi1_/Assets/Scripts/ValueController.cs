@@ -36,7 +36,7 @@ public class ValueController : MonoBehaviour
                     text.text = GameManager.boss_attack_speed.ToString();
                     break;
                 case "bossattacktype":
-                    GameManager.boss_attack_speed = temp;
+                    GameManager.boss_attack_type = temp;
                     switch (temp)
                     {
                         case 1:
@@ -56,7 +56,63 @@ public class ValueController : MonoBehaviour
                             break;
                     }
                     
-                    break; 
+                    break;
+                case "bossattackdirection":
+                    GameManager.boss_attack_directions = temp;
+                    switch (temp)
+                    {
+                        case 1:
+
+                            text.text = "Everywhere";
+                            break;
+                        case 2:
+
+                            text.text = "Horizontal";
+                            break;
+                        case 3:
+
+                            text.text = "Towards You";
+                            break;
+                        default:
+                            // code block
+                            break;
+                    }
+
+                    break;
+                case "bossmovespeed":
+                    GameManager.boss_move_speed = temp;
+                    text.text = GameManager.boss_move_speed.ToString();
+                    break;
+                case "bossmovepattern":
+                    GameManager.boss_move_pattern = temp;
+                    switch (temp)
+                    {
+                        case 1:
+
+                            text.text = "Stationary";
+                            break;
+                        case 2:
+
+                            text.text = "Random";
+                            break;
+                        case 3:
+
+                            text.text = "Follows You";
+                            break;
+                        default:
+                            // code block
+                            break;
+                    }
+
+                    break;
+                case "trackingstrength":
+                    GameManager.boss_tracking_strength = temp;
+                    text.text = GameManager.boss_tracking_strength.ToString();
+                    break;
+                case "trackingspeed":
+                    GameManager.boss_tracking_speed = temp;
+                    text.text = GameManager.boss_tracking_speed.ToString();
+                    break;
                 default:
                     // code block
                     break;
