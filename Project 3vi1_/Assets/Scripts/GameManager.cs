@@ -20,8 +20,8 @@ public static class GameManager
 
 
     public static int boss_tracking;
-    public static int boss_tracking_speed;
-    public static int boss_tracking_strength;
+    public static int boss_tracking_speed;//
+    public static int boss_tracking_strength;//
 
 
     public static int spawns_on;
