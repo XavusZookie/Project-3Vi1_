@@ -33,6 +33,6 @@ public static class GameManager
     public static int spawns_attack_speed;
     public static int spawns_attack_range;
 
-
+    public static bool boss_hit;
 
 }

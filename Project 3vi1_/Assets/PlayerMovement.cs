@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     private GameObject currentonewayplatform;
     [SerializeField] private BoxCollider2D playercollider;
+
+    public GameObject bulletprefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("space"))
+        {
+           
+
+                StartCoroutine(Shoot());
+            
+        }
+
+        if (Input.GetKeyDown("s"))
         {
             if(currentonewayplatform != null)
             {
@@ -70,6 +81,26 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreCollision(playercollider, platformCollider);
         yield return new WaitForSeconds(.25f);
         Physics2D.IgnoreCollision(playercollider,platformCollider, false);
+
+    }
+
+    public IEnumerator Shoot()
+    {
+        GameObject currentbullet;
+
+        if(controller.facing())
+        {
+             currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, .63f, 0), Quaternion.identity);
+        }
+        else
+        {
+             currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .63f, 0), Quaternion.identity);
+        }
+
+        BulletMover movement = currentbullet.GetComponent<BulletMover>();
+        movement.faceleft = controller.facing();
+        yield return new WaitForSeconds(.25f);
+
 
     }
 }
