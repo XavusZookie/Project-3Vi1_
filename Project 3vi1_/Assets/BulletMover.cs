@@ -39,6 +39,6 @@ public class BulletMover : MonoBehaviour
             Destroy(gameObject);
         }
         Destroy(gameObject);
-        Debug.Log(collision.collider.tag);
+        
     }
 }
