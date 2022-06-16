@@ -27,6 +27,10 @@ public class BulletMover : MonoBehaviour
 
         }
 
+       
+            //transform.position = transform.position + (new Vector3(-1,-1,0) * (speed * Time.deltaTime));
+
+        
     }
 
     

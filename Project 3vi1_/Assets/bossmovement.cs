@@ -36,7 +36,7 @@ public class bossmovement : MonoBehaviour
         if (target.position.x - this.transform.position.x > 0)
         {
 
-            if (target.position.y - this.transform.position.y > 2 && jump)
+            if (target.position.y - this.transform.position.y > 1 && jump)
             {
 
 
@@ -47,7 +47,7 @@ public class bossmovement : MonoBehaviour
 
 
             }
-            else if (target.position.y - this.transform.position.y < -2)
+            else if (target.position.y - this.transform.position.y < -1)
             {
 
                 
@@ -78,7 +78,7 @@ public class bossmovement : MonoBehaviour
         else if (target.position.x - this.transform.position.x < 0)
         {
 
-            if (target.position.y - this.transform.position.y > 2 && jump)
+            if (target.position.y - this.transform.position.y > 1 && jump)
             {
 
 
@@ -89,7 +89,7 @@ public class bossmovement : MonoBehaviour
 
 
             }
-            else if (target.position.y - this.transform.position.y < -2)
+            else if (target.position.y - this.transform.position.y < -1)
             {
 
                     if (currentonewayplatform != null && fall)
