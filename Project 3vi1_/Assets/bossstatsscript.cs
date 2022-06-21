@@ -5,6 +5,8 @@ using UnityEngine;
 public class bossstatsscript : MonoBehaviour
 {
     public GameObject bulletprefab;
+    public GameObject bossbulletprefab;
+
     public CharacterController2D controller;
     // Start is called before the first frame update
     void Start()
@@ -24,11 +26,11 @@ public class bossstatsscript : MonoBehaviour
 
         if (controller.facing())
         {
-            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, .63f, 0), Quaternion.identity);
+            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, 0, 0), Quaternion.identity);
         }
         else
         {
-            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .63f, 0), Quaternion.identity);
+            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .0f, 0), Quaternion.identity);
         }
 
         BulletMover movement = currentbullet.GetComponent<BulletMover>();
@@ -42,20 +44,35 @@ public class bossstatsscript : MonoBehaviour
     {
         GameObject currentbullet;
 
-        if (controller.facing())
-        {
-            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, .63f, 0), Quaternion.identity);
-        }
-        else
-        {
-            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .63f, 0), Quaternion.identity);
-        }
+        
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+        
 
-        BulletMover movement = currentbullet.GetComponent<BulletMover>();
+        bossbulletmover movement = currentbullet.GetComponent<bossbulletmover>();
         movement.faceleft = controller.facing();
         yield return new WaitForSeconds(2f);
         StartCoroutine(Shoot());
 
+
+        for (int i = 1; i < 3; i++)
+            {
+                for (int j = 1; j < 3; j++)
+                {
+                currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+                 movement = currentbullet.GetComponent<bossbulletmover>();
+
+
+            }
+            }
+
+
+
+        
+            
+
+        
     }
+
+}
 
 }

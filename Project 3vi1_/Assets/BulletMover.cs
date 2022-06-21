@@ -7,6 +7,7 @@ public class BulletMover : MonoBehaviour
     public float speed = 10;
     public bool faceleft;
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +17,19 @@ public class BulletMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!faceleft)
-        {
-        transform.position = transform.position + (Vector3.left * (speed * Time.deltaTime));
 
-        }
-        else
-        {
-        transform.position = transform.position + (Vector3.right * (speed * Time.deltaTime));
+      
+            if (!faceleft)
+            {
+                transform.position = transform.position + (Vector3.left * (speed * Time.deltaTime));
 
-        }
+            }
+            else
+            {
+                transform.position = transform.position + (Vector3.right * (speed * Time.deltaTime));
 
+            }
+        
        
             //transform.position = transform.position + (new Vector3(-1,-1,0) * (speed * Time.deltaTime));
 
@@ -45,4 +48,6 @@ public class BulletMover : MonoBehaviour
         Destroy(gameObject);
         
     }
+
+
 }
