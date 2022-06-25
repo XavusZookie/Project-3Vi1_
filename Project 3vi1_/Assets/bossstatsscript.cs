@@ -11,7 +11,7 @@ public class bossstatsscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Shoot());
+        StartCoroutine(Shooteverywhere());
     }
 
     // Update is called once per frame
@@ -44,35 +44,50 @@ public class bossstatsscript : MonoBehaviour
     {
         GameObject currentbullet;
 
-        
-        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(1, 0, 0), Quaternion.identity);
-        
-
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f+ 0.3072967f, -0.0351952314f - 0.3072967f, 0), Quaternion.identity);
         bossbulletmover movement = currentbullet.GetComponent<bossbulletmover>();
-        movement.faceleft = controller.facing();
+        movement.anglemaker(new Vector3(1, -1, 0));
+        
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f+ 0.3072967f, -0.0351952314f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(1, 0, 0));
+        
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f+ 0.3072967f, -0.0351952314f+ 0.3072967f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(1, 1, 0));
+        
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f, -0.0351952314f+ 0.3072967f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(0, 1, 0));
+      
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f- 0.3072967f, -0.0351952314f+ 0.3072967f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(-1, 1, 0));
+       
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f- 0.3072967f, -0.0351952314f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(-1, 0, 0));
+       
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f- 0.3072967f, -0.0351952314f- 0.3072967f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(-1, -1, 0));
+       
+
+        currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f, -0.0351952314f- 0.3072967f, 0), Quaternion.identity);
+        movement = currentbullet.GetComponent<bossbulletmover>();
+        movement.anglemaker(new Vector3(0, -1, 0));
+  
+
         yield return new WaitForSeconds(2f);
-        StartCoroutine(Shoot());
-
-
-        for (int i = 1; i < 3; i++)
-            {
-                for (int j = 1; j < 3; j++)
-                {
-                currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, 0, 0), Quaternion.identity);
-                 movement = currentbullet.GetComponent<bossbulletmover>();
-
-
-            }
-            }
-
-
-
-        
-            
-
-        
+        StartCoroutine(Shooteverywhere());
     }
 
 }
 
-}
+

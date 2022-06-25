@@ -6,6 +6,7 @@ TagManager:
   tags:
   - onewayplatform
   - nojump
+  - outerwalls
   layers:
   - Default
   - TransparentFX

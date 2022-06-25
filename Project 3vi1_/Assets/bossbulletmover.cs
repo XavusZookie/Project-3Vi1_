@@ -27,6 +27,15 @@ public class bossbulletmover : MonoBehaviour
         angle = givenangle;
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player" || collision.collider.tag == "outerwalls")
+        {
+            GameManager.boss_hit = true;
+            Destroy(gameObject);
+        }
+        
 
+    }
 
 }
