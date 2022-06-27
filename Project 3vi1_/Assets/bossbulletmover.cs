@@ -27,14 +27,25 @@ public class bossbulletmover : MonoBehaviour
         angle = givenangle;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+   
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.tag == "Player" || collision.collider.tag == "outerwalls")
+        if (collision.tag == "Player" || collision.tag == "outerwalls")
         {
+
+
             GameManager.boss_hit = true;
+
+            if (collision.tag == "Player" )
+            {
+                GameManager.player_health = GameManager.player_health - GameManager.boss_attack_damage;
+            }
+
             Destroy(gameObject);
         }
-        
+
 
     }
 

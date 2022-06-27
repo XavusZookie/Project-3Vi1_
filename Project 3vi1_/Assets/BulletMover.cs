@@ -38,16 +38,21 @@ public class BulletMover : MonoBehaviour
 
     
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "nojump")
-        {
-            GameManager.boss_hit = true;
-            Destroy(gameObject);
-        }
-        Destroy(gameObject);
-        
-    }
+    
 
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+            
+            if (collision.tag == "Boss")
+            {
+                GameManager.boss_health = GameManager.boss_health - 5;
+            }
+        
+
+        Destroy(gameObject);
+
+    }
 
 }

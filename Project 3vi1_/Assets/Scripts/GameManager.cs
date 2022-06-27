@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public static class GameManager 
 {
+    public static int player_health = 100;
+
     public static int boss_health = 100;//
     public static int boss_shape;
 
@@ -11,7 +13,7 @@ public static class GameManager
     public static int boss_attack_type = 1;//
     public static int boss_attack_range;
     public static int boss_attack_speed;//
-    public static int boss_attack_damage;//
+    public static int boss_attack_damage = 5;//
     public static int boss_attack_directions;//
 
 
