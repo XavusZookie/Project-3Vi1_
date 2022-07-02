@@ -14,7 +14,7 @@ public class bossstatsscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Shoottracker());
+        StartCoroutine(Shooteverywhere());
     }
 
     // Update is called once per frame
