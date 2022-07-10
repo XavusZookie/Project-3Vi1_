@@ -12,12 +12,12 @@ public static class GameManager
     
     public static int boss_attack_type = 1;//
     public static int boss_attack_range;
-    public static int boss_attack_speed;//
+    public static int boss_attack_speed = 2;//
     public static int boss_attack_damage = 20;//
     public static int boss_attack_directions;//
 
 
-    public static int boss_move_speed;//
+    public static int boss_move_speed = 40;//
     public static int boss_move_pattern;//
 
 

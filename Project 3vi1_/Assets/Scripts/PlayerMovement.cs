@@ -92,11 +92,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(controller.facing())
         {
-             currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, .63f, 0), Quaternion.identity);
+             currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, .20f, 0), Quaternion.identity);
         }
         else
         {
-             currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .63f, 0), Quaternion.identity);
+             currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .2f, 0), Quaternion.identity);
         }
 
         BulletMover movement = currentbullet.GetComponent<BulletMover>();

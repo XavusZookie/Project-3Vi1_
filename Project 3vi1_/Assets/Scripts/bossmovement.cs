@@ -40,7 +40,7 @@ public class bossmovement : MonoBehaviour
             {
 
 
-                controller.Move(1*runSpeed * Time.deltaTime, false, true);
+                controller.Move(1* GameManager.boss_move_speed * Time.deltaTime, false, true);
                 StartCoroutine(Timerforjump());
 
 
@@ -58,7 +58,7 @@ public class bossmovement : MonoBehaviour
                     StartCoroutine(Timer());
                     
                 }
-                controller.Move(1*runSpeed * Time.deltaTime, false, false);
+                controller.Move(1* GameManager.boss_move_speed * Time.deltaTime, false, false);
 
 
                 
@@ -66,7 +66,7 @@ public class bossmovement : MonoBehaviour
             }
             else
             {
-                controller.Move(1 * runSpeed * Time.deltaTime, false, false);
+                controller.Move(1 * GameManager.boss_move_speed * Time.deltaTime, false, false);
             }
 
 
@@ -82,7 +82,7 @@ public class bossmovement : MonoBehaviour
             {
 
 
-                controller.Move(-1 * runSpeed * Time.deltaTime, false, true);
+                controller.Move(-1 * GameManager.boss_move_speed * Time.deltaTime, false, true);
                 StartCoroutine(Timerforjump());
 
 
@@ -98,7 +98,7 @@ public class bossmovement : MonoBehaviour
                         StartCoroutine(DisableCollision());
                     StartCoroutine(Timer());
                 }
-                controller.Move(-1 * runSpeed * Time.deltaTime, false, false);
+                controller.Move(-1 * GameManager.boss_move_speed * Time.deltaTime, false, false);
 
                 
                     
@@ -109,7 +109,7 @@ public class bossmovement : MonoBehaviour
             }
             else
             {
-                controller.Move(-1 * runSpeed * Time.deltaTime, false, false);
+                controller.Move(-1 * GameManager.boss_move_speed * Time.deltaTime, false, false);
             }
 
             

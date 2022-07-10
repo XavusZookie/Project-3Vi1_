@@ -14,7 +14,29 @@ public class bossstatsscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Shooteverywhere());
+        switch (GameManager.boss_attack_directions)
+        {
+            case 1:
+
+                StartCoroutine(Shooteverywhere());
+
+                break;
+            case 2:
+                StartCoroutine(Shoot());
+
+
+                break;
+            case 3:
+                StartCoroutine(Shoottracker());
+
+
+                break;
+            default:
+                StartCoroutine(Shooteverywhere());
+                break;
+
+        }
+
     }
 
     // Update is called once per frame
@@ -23,27 +45,33 @@ public class bossstatsscript : MonoBehaviour
         
     }
 
-    public IEnumerator Shoot()
+    IEnumerator Shoot()
     {
         GameObject currentbullet;
+        bossbulletmover movement;
 
         if (controller.facing())
         {
-            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+            currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f + 0.3072967f, -0.0351952314f, 0), Quaternion.identity);
+            movement = currentbullet.GetComponent<bossbulletmover>();
+            movement.anglemaker(new Vector3(1, 0, 0));
+            
         }
         else
         {
-            currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .0f, 0), Quaternion.identity);
+            currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f - 0.3072967f, -0.0351952314f, 0), Quaternion.identity);
+            movement = currentbullet.GetComponent<bossbulletmover>();
+            movement.anglemaker(new Vector3(-1, 0, 0)); 
+            
         }
 
-        BulletMover movement = currentbullet.GetComponent<BulletMover>();
-        movement.faceleft = controller.facing();
-        yield return new WaitForSeconds(2f);
+        
+        yield return new WaitForSeconds(GameManager.boss_attack_speed);
         StartCoroutine(Shoot());
 
     }
 
-    public IEnumerator Shooteverywhere()
+     IEnumerator Shooteverywhere()
     {
         GameObject currentbullet;
 
@@ -87,12 +115,12 @@ public class bossstatsscript : MonoBehaviour
         movement.anglemaker(new Vector3(0, -1, 0));
   
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(GameManager.boss_attack_speed);
         StartCoroutine(Shooteverywhere());
     }
 
 
-    public IEnumerator Shoottracker()
+     IEnumerator Shoottracker()
     {
         GameObject currentbullet;
 
@@ -117,7 +145,7 @@ public class bossstatsscript : MonoBehaviour
 
         bossbulletmover movement = currentbullet.GetComponent<bossbulletmover>();
         movement.anglemaker(new Vector3(x/hyp, y/hyp, 0));
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(GameManager.boss_attack_speed);
         StartCoroutine(Shoottracker());
 
     }
