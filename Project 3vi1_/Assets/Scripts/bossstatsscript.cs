@@ -66,7 +66,7 @@ public class bossstatsscript : MonoBehaviour
         }
 
         
-        yield return new WaitForSeconds(GameManager.boss_attack_speed);
+        yield return new WaitForSeconds(GameManager.boss_attack_delay);
         StartCoroutine(Shoot());
 
     }
@@ -115,7 +115,7 @@ public class bossstatsscript : MonoBehaviour
         movement.anglemaker(new Vector3(0, -1, 0));
   
 
-        yield return new WaitForSeconds(GameManager.boss_attack_speed);
+        yield return new WaitForSeconds(GameManager.boss_attack_delay);
         StartCoroutine(Shooteverywhere());
     }
 
@@ -145,7 +145,7 @@ public class bossstatsscript : MonoBehaviour
 
         bossbulletmover movement = currentbullet.GetComponent<bossbulletmover>();
         movement.anglemaker(new Vector3(x/hyp, y/hyp, 0));
-        yield return new WaitForSeconds(GameManager.boss_attack_speed);
+        yield return new WaitForSeconds(GameManager.boss_attack_delay);
         StartCoroutine(Shoottracker());
 
     }

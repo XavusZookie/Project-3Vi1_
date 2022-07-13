@@ -35,6 +35,10 @@ public class ValueController : MonoBehaviour
                     GameManager.boss_attack_speed = temp;
                     text.text = GameManager.boss_attack_speed.ToString();
                     break;
+                case "bossattackdelay":
+                    GameManager.boss_attack_delay = temp;
+                    text.text = GameManager.boss_attack_delay.ToString();
+                    break;
                 case "bossattacktype":
                     GameManager.boss_attack_type = temp;
                     switch (temp)

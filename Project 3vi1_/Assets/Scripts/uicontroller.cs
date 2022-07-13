@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class uicontroller : MonoBehaviour
 {
@@ -31,12 +33,14 @@ public class uicontroller : MonoBehaviour
 
         if (GameManager.boss_health <= 0)
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene(2);
+
         }
 
         if (GameManager.player_health <= 0)
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene(3);
+
         }
     }
 }

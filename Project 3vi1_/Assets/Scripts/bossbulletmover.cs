@@ -10,11 +10,11 @@ public class bossbulletmover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = GameManager.boss_attack_speed;
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
 
         transform.position = transform.position + (angle * (speed * Time.deltaTime));
