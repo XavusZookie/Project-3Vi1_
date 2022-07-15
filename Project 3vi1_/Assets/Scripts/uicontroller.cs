@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class uicontroller : MonoBehaviour
 {
-    public Text text;
-    public Text bosshealthtext;
+    //public Text text;
+    public TextMeshProUGUI bosshealthtext;
+    //public TextMesh bosshealthmesh;
+    public TextMeshProUGUI text;
 
 
     // Start is called before the first frame update
