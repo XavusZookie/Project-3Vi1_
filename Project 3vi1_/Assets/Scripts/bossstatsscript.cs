@@ -64,8 +64,8 @@ public class bossstatsscript : MonoBehaviour
             movement.anglemaker(new Vector3(-1, 0, 0)); 
             
         }
+        FindObjectOfType<AudioManager>().Play("Bossshoot");
 
-        
         yield return new WaitForSeconds(GameManager.boss_attack_delay);
         StartCoroutine(Shoot());
 
@@ -113,8 +113,8 @@ public class bossstatsscript : MonoBehaviour
         currentbullet = Instantiate(bossbulletprefab, this.transform.position + new Vector3(-0.0500137396f, -0.0351952314f- 0.3072967f, 0), Quaternion.identity);
         movement = currentbullet.GetComponent<bossbulletmover>();
         movement.anglemaker(new Vector3(0, -1, 0));
-  
 
+        FindObjectOfType<AudioManager>().Play("Bossshoot");
         yield return new WaitForSeconds(GameManager.boss_attack_delay);
         StartCoroutine(Shooteverywhere());
     }
@@ -140,9 +140,9 @@ public class bossstatsscript : MonoBehaviour
         x = targetvector.x - bossvector.x;
         y = targetvector.y - bossvector.y;
         hyp = Mathf.Sqrt((x*x) + (y*y));
-        
 
 
+        FindObjectOfType<AudioManager>().Play("Bossshoot");
         bossbulletmover movement = currentbullet.GetComponent<bossbulletmover>();
         movement.anglemaker(new Vector3(x/hyp, y/hyp, 0));
         yield return new WaitForSeconds(GameManager.boss_attack_delay);

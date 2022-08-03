@@ -48,12 +48,13 @@ public class BulletMover : MonoBehaviour
             if (collision.tag == "Boss")
             {
                 GameManager.boss_health = GameManager.boss_health - 5;
+            FindObjectOfType<AudioManager>().Play("Bosshit");
             }
         if (collision.tag == "Player")
         {
             GameManager.player_health = GameManager.player_health - GameManager.boss_attack_damage;
+        
         }
-
         Destroy(gameObject);
 
     }

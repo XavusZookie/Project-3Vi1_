@@ -41,6 +41,7 @@ void Update()
             if (collision.tag == "Player" )
             {
                 GameManager.player_health = GameManager.player_health - GameManager.boss_attack_damage;
+                FindObjectOfType<AudioManager>().Play("Playerhit");
             }
 
             Destroy(gameObject);

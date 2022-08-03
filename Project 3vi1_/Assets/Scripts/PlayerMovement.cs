@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         {
              currentbullet = Instantiate(bulletprefab, this.transform.position + new Vector3(-1, .2f, 0), Quaternion.identity);
         }
-
+        FindObjectOfType<AudioManager>().Play("Playershoot");
         BulletMover movement = currentbullet.GetComponent<BulletMover>();
         movement.faceleft = controller.facing();
         yield return new WaitForSeconds(.75f);
