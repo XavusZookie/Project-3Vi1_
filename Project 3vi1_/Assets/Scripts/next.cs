@@ -44,13 +44,14 @@ public class next : MonoBehaviour
     public void mainmenu()
     {
         
-        GameManager.boss_health = 100;
+        GameManager.boss_health = 50;
         GameManager.player_health = 100;
-        GameManager.boss_attack_type = 1;//
-        GameManager.boss_attack_delay = 2;//
-        GameManager.boss_attack_speed = 10;//
-        GameManager.boss_attack_damage = 20;//
-        GameManager.boss_move_speed = 40;//
+        GameManager.boss_attack_type = 2;//
+        GameManager.boss_attack_delay = 3;//
+        GameManager.boss_attack_speed = 5;//
+        GameManager.boss_attack_damage = 5;//
+        GameManager.boss_move_speed = 30;//
+        GameManager.boss_attack_directions = 2;//
 
 
     SceneManager.LoadScene(0);
