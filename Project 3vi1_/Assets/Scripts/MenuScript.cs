@@ -37,6 +37,8 @@ public class MenuScript : MonoBehaviour
         {
             clicked = false;
             Destroy(butt);
+            Destroy(panel);
+
         }
 
     }
